@@ -21,7 +21,7 @@ runs:
         EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
         MESSAGE: ${{ inputs.message }}
         BRANCH: auto/${{ github.run_id }}/${{ github.run_attempt}}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ github.token }}
       run: |
         echo "branch=${BRANCH}" >> "${GITHUB_OUTPUT}"
         git config --global user.name "${USERNAME}"
